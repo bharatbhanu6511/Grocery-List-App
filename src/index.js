@@ -15,3 +15,15 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+window.onload = function() {
+  adjustMainMinHeight();
+};
+
+window.onresize = function() {
+  adjustMainMinHeight();
+};
+
+function adjustMainMinHeight() {
+  var footerHeight = document.getElementById('footer').offsetHeight;
+  document.getElementById('main-content').style.minHeight = "calc(100vh - " + footerHeight + "px)";
+}
